@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
 
 const StyledApp = styled.div`
   background-color: orangered;
@@ -32,13 +33,16 @@ const Input = styled.input`
 
 function App() {
   return (
-    <StyledApp>
-      <H1>The Wild Oasis</H1>
-      <Button onClick={() => alert("Check in")}>Chick in</Button>
-      <Button onClick={() => alert("Check out")}>Chick out</Button>
+    <>
+      <GlobalStyles />
+      <StyledApp>
+        <H1>The Wild Oasis</H1>
+        <Button onClick={() => alert("Check in")}>Chick in</Button>
+        <Button onClick={() => alert("Check out")}>Chick out</Button>
 
-      <Input type="number" placeholder="Number of guests" />
-    </StyledApp>
+        <Input type="number" placeholder="Number of guests" />
+      </StyledApp>
+    </>
   );
 }
 
