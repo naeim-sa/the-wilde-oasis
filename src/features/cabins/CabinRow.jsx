@@ -82,13 +82,13 @@ function CabinRow({ cabin }) {
 }
 
 CabinRow.propTypes = {
-  cabin: PropTypes.object.isRequired,
-  cabinId: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  maxCapacity: PropTypes.number.isRequired,
-  regularPrice: PropTypes.number.isRequired,
-  discount: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
+  cabin: PropTypes.object,
+  cabinId: PropTypes.number,
+  name: PropTypes.string,
+  maxCapacity: PropTypes.number,
+  regularPrice: PropTypes.number,
+  discount: PropTypes.number,
+  image: PropTypes.string,
 };
 
 export default CabinRow;
