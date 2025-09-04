@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { createContext, useContext } from "react";
 import PropTypes from "prop-types";
+import { createContext, useContext } from "react";
 
 const StyledTable = styled.div`
   border: 1px solid var(--color-grey-200);
@@ -72,7 +72,7 @@ function Table({ columns, children }) {
 }
 
 function Header({ children }) {
-  const { columns } = useContext();
+  const { columns } = useContext(TableContext);
   return (
     <StyledHeader role="row" as="header" columns={columns}>
       {children}
@@ -81,7 +81,7 @@ function Header({ children }) {
 }
 
 function Row({ children }) {
-  const { columns } = useContext();
+  const { columns } = useContext(TableContext);
   return (
     <StyledRow role="row" columns={columns}>
       {children}
