@@ -89,7 +89,11 @@ function Row({ children }) {
   );
 }
 
-function Body() {}
+function Body({ data, render }) {
+  if (!data.length) return <Empty>No data to show at the moment</Empty>;
+
+  return <StyledBody>{data.map(render)}</StyledBody>;
+}
 
 Table.Header = Header;
 Table.Row = Row;
@@ -99,6 +103,19 @@ Table.Footer = Footer;
 Table.propTypes = {
   columns: PropTypes.string,
   children: PropTypes.children,
+};
+
+Header.propTypes = {
+  children: PropTypes.node,
+};
+
+Row.propTypes = {
+  children: PropTypes.node,
+};
+
+Body.propTypes = {
+  data: PropTypes.array,
+  render: PropTypes.func,
 };
 
 export default Table;
